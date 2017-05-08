@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>RestCurrency</groupId>
+	<artifactId>RestSpringMongoDB</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-framework.version>4.2.3.RELEASE</spring-framework.version>
+		<hibernate.version>5.1.0.Final</hibernate.version>
+		<mysql.version>5.1.26</mysql.version>
+		<junit.version>4.11</junit.version>
+		<jackson.version>2.5.3</jackson.version>
+		<mongodb.version>3.2.2</mongodb.version>
+		<spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!--&lt;!&ndash; MySQL database driver &ndash;&gt;-->
+		<!--<dependency>-->
+		<!--<groupId>mysql</groupId>-->
+		<!--<artifactId>mysql-connector-java</artifactId>-->
+		<!--<version>${mysql.version}</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; Hibernate framework &ndash;&gt;-->
+		<!--<dependency>-->
+		<!--<groupId>org.hibernate</groupId>-->
+		<!--<artifactId>hibernate-java8</artifactId>-->
+		<!--<version>${hibernate.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+		<!--<groupId>org.hibernate</groupId>-->
+		<!--<artifactId>hibernate-core</artifactId>-->
+		<!--<version>${hibernate.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+		<!--<groupId>org.hibernate</groupId>-->
+		<!--<artifactId>hibernate-entitymanager</artifactId>-->
+		<!--<version>${hibernate.version}</version>-->
+		<!--</dependency>-->
+
+		<!-- Spring framework dependencies -->
+		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
+
+		<!-- JUNIT -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<!--&lt;!&ndash;MongoDB&ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.mongodb</groupId>-->
+			<!--<artifactId>mongo-java-driver</artifactId>-->
+			<!--<version>${mongodb.version}</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring-data-mongodb.version}</version>
+		</dependency>
+
+
+	</dependencies>
+
+</project>
