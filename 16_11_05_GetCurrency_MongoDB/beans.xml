@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/data/mongo
+          http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Configure the Mongo Server -->
+	<bean id="uri" class="com.mongodb.MongoClientURI">
+		<constructor-arg name="uri"
+			value="mongodb://root:Paris2005@ds053126.mlab.com:53126/katrin_litv" />
+		<!-- value="mongodb://root:12345.com@ds013664.mlab.com:13664/tel_ran" -->
+	</bean>
+	<!-- Берется из драйвера -->
+	<bean id="mongo" class="com.mongodb.MongoClient">
+		<constructor-arg name="uri" ref="uri" />
+	</bean>
+	<!-- Берется из депендеси в поме -->
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="katrin_litv" />
+	</bean>
+	<mongo:repositories base-package=" tel_ran.currency.mongoDB.repo"></mongo:repositories>
+	<bean class=" tel_ran.currency.mongoDB.dao.CurrencyMongoDB"></bean>
+	<!-- Спринг заходит в каждый класс и ищет аннотации -->
+	<context:annotation-config />
+</beans>
